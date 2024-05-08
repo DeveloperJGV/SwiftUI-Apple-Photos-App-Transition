@@ -15,6 +15,8 @@
 		CECB88922BEBFDD5000800D9 /* UICoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB88912BEBFDD5000800D9 /* UICoordinator.swift */; };
 		CECB88942BEBFFAC000800D9 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB88932BEBFFAC000800D9 /* Home.swift */; };
 		CECB88962BEC055A000800D9 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB88952BEC055A000800D9 /* Detail.swift */; };
+		CECB88982BEC0A6F000800D9 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB88972BEC0A6F000800D9 /* Hero.swift */; };
+		CECB889A2BEC1637000800D9 /* HeroKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB88992BEC1637000800D9 /* HeroKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		CECB88912BEBFDD5000800D9 /* UICoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICoordinator.swift; sourceTree = "<group>"; };
 		CECB88932BEBFFAC000800D9 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		CECB88952BEC055A000800D9 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		CECB88972BEC0A6F000800D9 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		CECB88992BEC1637000800D9 /* HeroKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 			children = (
 				CECB888F2BEBFBB0000800D9 /* Item.swift */,
 				CECB88912BEBFDD5000800D9 /* UICoordinator.swift */,
+				CECB88992BEC1637000800D9 /* HeroKey.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -91,6 +96,7 @@
 			children = (
 				CECB88932BEBFFAC000800D9 /* Home.swift */,
 				CECB88952BEC055A000800D9 /* Detail.swift */,
+				CECB88972BEC0A6F000800D9 /* Hero.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,8 +175,10 @@
 				CECB88822BEBF8B2000800D9 /* ContentView.swift in Sources */,
 				CECB88962BEC055A000800D9 /* Detail.swift in Sources */,
 				CECB88942BEBFFAC000800D9 /* Home.swift in Sources */,
+				CECB88982BEC0A6F000800D9 /* Hero.swift in Sources */,
 				CECB88902BEBFBB0000800D9 /* Item.swift in Sources */,
 				CECB88802BEBF8B2000800D9 /* Photos_App_TransitionApp.swift in Sources */,
+				CECB889A2BEC1637000800D9 /* HeroKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

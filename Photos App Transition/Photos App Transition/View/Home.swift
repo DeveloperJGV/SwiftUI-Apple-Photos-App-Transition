@@ -29,12 +29,20 @@ struct Home: View {
         GeometryReader{
             let size = $0.size
             
+            Rectangle()
+                .fill(.clear)
+                .anchorPreference(key: HeroKey.self, value: .bounds, transform: { anchor in
+                    return [item.id + "SOURCE": anchor]
+                })
+            
+            
             if let previewImage = item.previewImage{
                 Image(uiImage: previewImage)
                     .resizable()
                     .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                     .frame(width: size.width, height: size.height)
                     .clipped()
+                    .opacity(coordinator.selectedItem?.id == item.id ? 0 : 1)
             }
         }
         .frame(height: 130)

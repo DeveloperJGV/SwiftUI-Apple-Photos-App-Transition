@@ -13,19 +13,60 @@ struct Detail: View {
         GeometryReader{
             let size =  $0.size
             
-            ScrollView(.horizontal){
-                LazyHStack(spacing: 0){
-                    ForEach(coordinator.items){
-                         item in
-                        ImageView(item, size: size)
+            
+            VStack(spacing: 0){
+                NavigationBar()
+                
+                ScrollView(.horizontal){
+                    LazyHStack(spacing: 0){
+                        ForEach(coordinator.items){
+                             item in
+                            ImageView(item, size: size)
+                        }
                     }
+                    .scrollTargetLayout()
                 }
-                .scrollTargetLayout()
             }
             
             .scrollTargetBehavior(.paging)
+            .scrollPosition(id: .init(get: {
+                return coordinator.detailScrollPosition
+            }, set: {
+                coordinator.detailScrollPosition = $0
+            }))
+            .background {
+                if let selectedItem = coordinator.selectedItem{
+                    Rectangle()
+                        .fill(.clear)
+                        .anchorPreference(key: HeroKey.self, value: .bounds, transform: { anchor in
+                            return [selectedItem.id + "DEST": anchor]
+                        })
+                }
+            }
         }
         .opacity(coordinator.showDetailView ? 1 : 0)
+        .onAppear{
+            coordinator.toogleView(show: true)
+        }
+    }
+    
+  
+    @ViewBuilder
+    func NavigationBar() -> some View {
+        HStack{
+            Button(action: {coordinator.toogleView(show: false)}, label: {
+                HStack(spacing: 2){
+                    Image(systemName: "chevron.left")
+                        .font(.title3)
+                    Text ("Regresar")
+                }
+            })
+        }
+        .padding([.top, .horizontal], 15)
+        .padding(.bottom, 10)
+        .background(.ultraThinMaterial)
+        .offset(y: coordinator.showDetailView ? 0 : -120)
+        .animation(.easeInOut(duration: 0.15), value: coordinator.showDetailView)
     }
     
     @ViewBuilder
