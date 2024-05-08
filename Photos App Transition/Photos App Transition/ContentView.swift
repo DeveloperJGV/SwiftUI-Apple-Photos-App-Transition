@@ -13,6 +13,14 @@ struct ContentView: View {
         NavigationStack{
             Home()
                 .environment(coordinator)
+                .allowsHitTesting(coordinator.selectedItem == nil)
+        }
+        .overlay{
+            if coordinator.selectedItem != nil {
+                Detail()
+                    .environment(coordinator)
+                    .allowsHitTesting(coordinator.showDetailView)
+            }
         }
     }
 }
