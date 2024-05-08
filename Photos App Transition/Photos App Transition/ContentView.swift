@@ -8,14 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    var coordinator: UICoordinator = .init()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack{
+            Home()
+                .environment(coordinator)
         }
-        .padding()
     }
 }
 
